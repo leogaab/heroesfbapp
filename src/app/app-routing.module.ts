@@ -1,0 +1,23 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { HeroesComponent } from './components/pages/heroes/heroes.component';
+import { HeroeComponent } from './components/pages/heroe/heroe.component';
+
+
+const routes: Routes = [
+  { path: 'heroes', component: HeroesComponent },
+  { path: 'heroe/:id', component: HeroeComponent },
+  { path: '**', pathMatch: 'full', redirectTo: 'heroes' },
+];
+
+
+@NgModule({
+  declarations: [],
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class AppRoutingModule { }
